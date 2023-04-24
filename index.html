@@ -1,0 +1,181 @@
+<!DOCTYPE HTML>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Dlux Home</title>
+        <link rel="stylesheet" href="css/style.css">
+        <link rel="icon" type="image/x-icon" href="favicon.ico"/>
+        <!-- содержимое .header-top и footer совпадает (где применимо) на этой странице и на другой. 
+            Я не оформяла это через сборку в PHP, так как из образца поняла, что это не требуется. 
+            Но файл легко разбить.  -->
+    </head>
+    <body>
+        <header>
+            <div class="wrapper header-wrapper">
+                <section class="header-top">
+                    <a href="#" class="logo-link">
+                        <img src="img/logo_a.png" alt="dLux Services" class="logo-img" width="114" height="75" />
+                    </a>
+                        
+                    <nav class="header-nav">
+                        <a href="#" class="menu-logo-link mobile-only toggle">
+                            <img src="img/menu_mobile.png" alt="Menu" class="menu-logo-img mobile-only"/>
+                        </a>
+                                        
+                        <ul class="header-menu-list nobullet">
+                                <li class="flyout-only menu-flyout-title accent-font"><a tabindex="0">Menu</a></li>
+                                <li class="menu-item"><a href="#about">About</a></li>
+                                <li class="menu-item"><a href="#services">Services</a></li>
+                                <li class="menu-item"><a href="#founder">Founder</a></li>
+                                <li class="menu-item"><a href="#contacts">Contacts</a></li>
+                                <li class="flyout-only menu-flyout-contact email accent-font"><a tabindex="0">1@dlux.services</a></li>
+                                <li class="flyout-only menu-flyout-contact phone accent-font"><a tabindex="0">+18143511265</a></li>
+                        </ul>
+                    </nav>
+                </section>
+
+                <section class="about">
+                    <h1 class="title">Cloud software development</h1>
+                    <ul class="nobullet">
+                        <li>Websites, mobile applications</li>
+                        <li>Remote development teams</li>
+                        <li>Cloud Infrastructure Management</li>
+                    </ul>
+                    <a href="#request-form" class="request-button narrow">Send a request</a>
+
+                </section>
+            </div>
+        </header>
+        <main>
+            <section class="marketing">
+                <div class="wrapper">
+                    <span class="marketing-image"></span>
+                    <span class="decorative-line-marketing"></span>
+                    <h2 id="about">Basic marketing information <span class="accent-color">about the company</span></h2>
+                    <p class="marketing-info">Basic marketing info about the company: We deliver customized cloud based solutions for your ideas. 20 years of high performance cloud based development experience (that’s my experience incl. Google and Gemini).</p>
+                    <a href="#request-form" class="request-button narrow">Send a request</a>
+                </div>
+            </section>
+
+            <section class="services">
+                <div class="wrapper">
+                    <h2 id="services">Services</h2>
+                    <span class="decorative-line-services"></span>
+                    <ul class="services-list nobullet">
+                        <li>
+                            <h4>Cloud based development</h4>
+                            <p>Develop an app for your project: web and mobile apps for your custom business needs on Amazon Web Services, Google Cloud Platform or your private cloud.</p>
+                            <a href="#request-form" class="request-button">Send a request</a>
+                        </li>
+
+                        <li>
+                            <h4>Remote development teams</h4>
+                            <p>Manage and improve your services with a dedicated development team that covers all functions. You only need to define the tasks and priorities, we are doing the rest.</p>
+                            <a href="#request-form" class="request-button">Send a request</a>
+                        </li>
+
+                        <li>
+                            <h4>Infrastructure management</h4>
+                            <p>We monitor your services and keep them running 24/7</p>
+                            <a href="#request-form" class="request-button">Send a request</a>
+                        </li>
+                    </ul>
+                </div>    
+            </section>
+
+            <section class="founder">
+                <div class="wrapper">
+                    <h2 id="founder">Founder</h2>
+                    <span class="decorative-line-founder"></span>
+                    <p>Balazs, 20 years experience in cloud development, leader and contributor of many projects with billions of users as a senior Google</p>
+                    <img src="img/founder_mobile.jpg" alt="Balazs" 
+                        srcset="img/founder_mobile.jpg 288w, img/founder_desktop.jpg 500w"
+                        sizes="(max-width: 900px) 288px, 500px" />
+                </div>
+            </section>
+               
+            <section class="contacts">
+                <div class="wrapper">
+                    <div class="contact-info-wrapper" id="contacts">
+                        <h2>Contacts</h2>
+                        <p class="accent-font">1@dlux.services</p>
+                        <p class="accent-font">+118143511265</p>
+                    </div>
+                    <form action="#" method="post" name="request-form" id="request-form" class="contacts-form">
+                        <fieldset>
+                            <legend>
+                                Send <span class="accent-color">a request</span>                              
+                            </legend>
+                            <div class="floating-labels">
+                                <input type="text" name="name-field" id="name-field" placeholder="Name" />
+                                <label for="name-field">Name</label>
+                                <input type="text" name="company-field" id="company-field" placeholder="Company" />
+                                <label for="company-field">Company</label>
+                                <input type="tel" name="phone-field" id="phone-field" placeholder="Callback phone number" />
+                                <label for="phonefield">Callback phone number</label>
+                                <input type="text" onfocus="(this.type='datetime-local')" onblur="(this.type='text')" name="datetime-field" id="datetime-field" placeholder="When is a good time to call" />
+                                <!-- https://www.geeksforgeeks.org/how-to-set-placeholder-value-for-input-type-date-in-html-5/ -->
+                                <label for="datetime-field">When is a good time to call</label>
+                                <input type="email" name="email-field" id="email-field" placeholder="Email" required />
+                                <label for="email-field">Email</label>
+                                <input type="text" name="what-field" id="what-field" placeholder="What can we help you with?" />
+                                <label for="what-field">What can we help you with?</label>
+                                </div>
+                            <select name="origin-field" id="origin-field" required >
+                                <option value="" disabled selected>How did you find us?</option>
+                                <option value="Friends">Friends</option>
+                                <option value="Search">Search</option>
+                                <option value="Social media">Social media</option>
+                                <option value="Other">Other</option>
+                            </select>
+                            <label for="origin-field">How did you find us?</label>
+                            <input type="checkbox" name="pers-data-field" id="pers-data-field" checked />
+                            <label for="pers-data-field">I agree with the personal data processing policy</label>
+                            <button class="request-button narrow" type="submit">Send a request</button>
+                        </fieldset>
+                    </form>
+                </div>   
+            </section>
+        </main>
+        <footer class="footer-nav">
+            <div class="wrapper footer-wrapper">
+                <div class="footer-top">
+                    <ul class="footer-menu-list nobullet">
+                        <li class="menu-item"><a href="#about">About</a></li>
+                        <li class="menu-item"><a href="#services">Services</a></li>
+                        <li class="menu-item"><a href="#founder">Founder</a></li>
+                        <li class="menu-item"><a href="#contacts">Contacts</a></li>
+                    </ul>
+
+                    <div class="footer-social">
+                        <h4 class="social-media-title accent-font">Social media</h4>
+                        <a href="#" class="button-social facebook-icon"></a>
+                        <a href="#" class="button-social insta-icon"></a>
+                        <a href="#" class="button-social twitter-icon"></a>
+                        <a href="#" class="button-social linkedin-icon"></a>
+                        <a href="#" class="button-social telegram-icon"></a>
+                        <a href="#" class="button-social whatsapp-icon"></a>
+                    </div>
+                </div>
+
+                <div class="footer-legal">
+                    <a href="#" class="legal-link">Privacy Policy</a>
+                    <a href="#" class="legal-link">Rules for the processing of personal data</a>
+                    <a href="#" class="legal-link">Website Terms of Use</a>
+                    <!-- в дизайне для мобильных только одна из этих строчек, а не все три. Думаю, что это ошибка и все три нужны. Но если я неправа, легко добавить visually-hidden -->
+                </div>
+                         
+                <a href="#" class="logo-link">
+                    <img src="img/logo_a.png" alt="dLux Services" class="logo-img" width="114" height="75" />
+                </a>
+
+                <div class="footer-slogan">
+                    <b class="footer-slogan-text accent-font">20 years of high performance <span class="accent-color">cloud based development</span> experience</b>
+                </div>
+                <!--  <p class="copyright visually-hidden">&copy;2022 Created by Upline Studio</p>-->
+            </div>
+        </footer>
+      <script src="js/script.js"></script>
+    </body>
+

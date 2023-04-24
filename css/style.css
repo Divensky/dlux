@@ -1,0 +1,1236 @@
+/* Общие стили и шрифты */
+
+html {
+  box-sizing: border-box;
+}
+
+*, *::before, *::after {
+    box-sizing: inherit;
+    margin: 0;
+    padding: 0;
+    border: 0;
+  }
+
+img,
+picture,
+video {
+  max-width: 100%;
+}
+
+/* пригодится, если переводить в Less:
+@navy_bkgr: #112B45;
+@white: #FFFFFF;
+@blue: #315BEF;
+@accent: #66DD8D;
+@text_legal_main: #D4D4D4;
+@text_2: #F4F4F4;
+@footer-background: #081D31;
+*/
+
+/* oxygen-regular - latin */
+@font-face {
+    font-display: swap; 
+    font-family: 'Oxygen';
+    font-style: normal;
+    font-weight: 400;
+    src: url('../fonts/oxygen-v15-latin-regular.woff2') format('woff2'), /* Chrome 36+, Opera 23+, Firefox 39+ */
+         url('../fonts/oxygen-v15-latin-regular.woff') format('woff'); /* Chrome 5+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+  }
+/* oxygen-700 - latin */
+  @font-face {
+    font-display: swap; 
+    font-family: 'Oxygen';
+    font-style: normal;
+    font-weight: 700;
+    src: url('../fonts/oxygen-v15-latin-700.woff2') format('woff2'), /* Chrome 36+, Opera 23+, Firefox 39+ */
+         url('../fonts/oxygen-v15-latin-700.woff') format('woff'); /* Chrome 5+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+  }
+
+/* poppins-600 - latin */
+@font-face {
+    font-display: swap; 
+    font-family: 'Poppins';
+    font-style: normal;
+    font-weight: 600;
+    src: url('../fonts/poppins-v20-latin-600.woff2') format('woff2'), /* Chrome 36+, Opera 23+, Firefox 39+ */
+         url('../fonts/poppins-v20-latin-600.woff') format('woff'); /* Chrome 5+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+  }
+/* poppins-700 - latin */
+  @font-face {
+    font-display: swap; 
+    font-family: 'Poppins';
+    font-style: normal;
+    font-weight: 700;
+    src: url('../fonts/poppins-v20-latin-700.woff2') format('woff2'), /* Chrome 36+, Opera 23+, Firefox 39+ */
+         url('../fonts/poppins-v20-latin-700.woff') format('woff'); /* Chrome 5+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+  }
+
+  /* manrope-regular - latin */
+@font-face {
+    font-display: swap; 
+    font-family: 'Manrope';
+    font-style: normal;
+    font-weight: 400;
+    src: url('../fonts/manrope-v13-latin-regular.woff2') format('woff2'), /* Chrome 36+, Opera 23+, Firefox 39+ */
+         url('../fonts/manrope-v13-latin-regular.woff') format('woff'); /* Chrome 5+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+  }
+  
+body {
+    background-color: #112B45;
+    font-family: Oxygen, Tahoma, sans-serif;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 20px;
+    color: #FFFFFF;
+}
+
+.wrapper {
+  margin: 0 auto;
+  width: 288px;
+}
+
+.nobullet {
+  list-style: none;
+}
+
+.visually-hidden {
+  display: none;
+}
+
+.accent-color, .legal-link {
+  color: #66DD8D;
+}
+
+h1, h2, h4, legend, .accent-font, .request-button {
+  font-family: 'Poppins', Verdana, sans-serif;
+  font-style: normal;
+  font-weight: 600;
+  letter-spacing: -0.06em;
+  }
+
+.slim-font, .legal-link, label, option, select {
+  font-family: 'Manrope', Arial, sans-serif;
+  font-style: normal;
+  font-weight: 400;
+}
+
+/* header styles */
+
+header {
+  background-image: url("../img/mask_bg_about_mobile.png"), url("../img/bkgr_dlux_header.jpg");
+  background-size: cover, cover; 
+  background-color: rgba(17, 43, 69, 0.8);
+  background-position: center, center;
+  background-repeat: no-repeat, no-repeat;
+  transition-duration: 5ms;  
+}
+
+.no-background {
+  background-image: none;
+  min-height: auto;
+}
+
+.header-wrapper:not(.no-background) {
+  min-height: 568px;
+}
+
+.header-top {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-start;
+  justify-content: space-between;
+  position: relative;
+}
+
+header .logo-img {
+  margin-top: 8px;
+  /* в моб.дизайне для юр.страницы этого маржина нет, а на всех остальных страницах есть. Считаю ошибкой дизайна*/
+  width: 114px;
+}
+
+/* меню в header скрыто для мобильных */ 
+.header-menu-list, .flyout-only {
+    display: none;  
+}
+
+/* в мобильном только символ, который по нажатию раскрывается в меню */
+header .menu-logo-img {
+  margin-top: 32px;
+  /* в моб.дизайне размеры этого маржина разные на разных стр-цах. Считаю ошибкой дизайна и ставлю один размер*/
+}
+
+header a {
+      text-decoration: none;
+      font: inherit;
+      color: inherit;
+    }
+
+.header-menu-list .menu-item a:hover, 
+.header-menu-list .menu-item a:active, 
+.header-menu-list .menu-item a:focus {
+  color: #66DD8D;
+}
+
+/* fly-out menu */
+
+header.active .menu-logo-img {
+  margin-top: 16px;
+  margin-left: 8px;
+}
+
+header.active {
+  background: rgba(34, 34, 34, 0.7);
+  min-height: 568px;
+}
+
+header.active .logo-link {
+  opacity: 0.7;
+}
+
+header.active .header-nav {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-start;
+  justify-content: space-between;
+  position: absolute;
+  top: 0;
+  right: 0;
+  z-index: 1;
+}
+
+header.active .header-menu-list {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  background: #112B45;
+  width: calc(100% - 50px);
+  min-height: 568px;
+  border-bottom: solid 1px rgba(34, 34, 34, 0.7);
+}
+
+header.active .flyout-only{
+  display: block;
+}
+
+header.active .header-menu-list li{
+  width: 100%;
+  text-align: left;
+  padding-top: 15px; 
+  padding-bottom: 15px;
+  padding-left: 22px;
+  height: 53px;
+}
+
+header.active .header-menu-list .menu-item:not(:first-child) {
+ border-top: solid 1px rgba(255, 255, 255, 0.17);
+}
+
+header.active ul .menu-flyout-title {
+  background: #315BEF;
+  font-size: 16px;
+  line-height: 15px;
+  text-align: center;
+}
+
+header.active ul .menu-flyout-contact {
+  font-size: 16px;
+  line-height: 24px;
+}
+
+header.active .menu-flyout-contact.email {
+  min-height: 250px; 
+  display: flex;
+  align-items: flex-end;
+  padding-bottom: 0;
+}
+
+header.active .menu-flyout-contact.phone {
+  align-self: flex-end;
+}
+
+/* header для десктопов */ 
+
+@media screen and (min-width: 900px) {
+
+  .header-wrapper:not(.no-background) {
+    min-height: 736px;
+  }
+  
+  .header-menu-list {
+    display: inline-flex;
+    flex-wrap: wrap;
+    margin-top: 21px;
+    }
+        
+  header .mobile-only, .flyout-only {
+      display: none;    
+    } 
+
+  .wrapper {
+    width: 90%;
+    max-width: 1140px;
+    }
+
+  header .menu-item:not(:last-child) {
+      margin-right: 32px;
+    }
+   
+  header .logo-img {
+      width: 159px;
+    }
+  
+  h1, h2, h4, legend, .accent-font, .request-button {
+    font-weight: 700;
+    }  
+  }
+
+/* end of header */  
+
+/* About section start */
+
+.about h1 {
+  padding-top: 221px; /*в начале каждого раздела отступ указан снизу вверх*/
+  font-size: 32px;
+  line-height: 29px;
+  margin-bottom: 18px;
+}
+
+.about li {
+  margin-bottom: 12px;
+}
+
+.about li::before {
+  content: url(../img/octagon_check_green.png);
+  padding-right: 18px;
+  display: inline-block;
+  vertical-align: middle;
+  /*учили задавать через background-image: url(../img/octagon_check_green.png) + позиционирование, но вроде бы это больше кода*/
+}
+
+.request-button {
+  display: flex;
+  font-size: 16px;
+  text-decoration: none;
+  line-height: 24px;
+  font-weight: 700;
+  padding: 16px 32px;
+  justify-content: center;
+  align-items: center;
+  background: #315BEF;
+  border-radius: 36px;
+  color: #FFFFFF;
+  width: 100%;
+}
+
+.request-button:hover, 
+.request-button:active, 
+.request-button:focus {
+  background: linear-gradient(267.74deg, #315BEF 3.51%, #66DD8D 98.41%);
+}
+
+@media screen and (min-width: 900px) {
+  .about h1 {
+    padding-top: 129px;
+    font-size: 36px;
+    line-height: 54px;
+    margin-bottom: 26px;
+  }
+
+  .request-button {
+    padding: 16px 32px;
+    border: 1px solid #315BEF;
+  }
+
+  .request-button.narrow {
+    width: 187px;
+  }
+}
+
+/* end of About section */
+
+/* Marketing section start */
+
+.marketing {
+  margin-top: 64px;
+}
+
+.marketing .wrapper {
+  position: relative;
+}
+
+.decorative-line-marketing {
+  content: url(../img/decorative_1about_mobile.svg);
+  position: absolute;
+  top: -40px;
+  left: 280px;
+}
+
+.marketing-image {
+  display: block;
+  background: url('../img/bkgr_marketing_mobile.jpg') #112B45 no-repeat center; 
+  background-size: 288px 160px;
+  width: 288px;
+  height: 160px;
+  border-radius: 300px;
+  position: relative;
+  margin-bottom: 24px;
+  }
+  
+.marketing-image::before, .marketing-image::after {
+  content: "";
+  display: block;
+  background: linear-gradient(267.74deg, #315BEF 3.51%, #66DD8D 98.41%);
+  filter: blur(16px);
+  border-radius: 220px;
+  width: 273px;
+  height: 128px;
+  position: absolute;
+  top: -8px;
+  left: 7px;
+  z-index: -1;
+  }
+ 
+.marketing h2 {
+  font-size: 32px;
+  line-height: 29px;
+  margin-bottom: 16px;
+}
+
+.marketing-info {
+  margin-bottom: 24px;
+  position: relative;
+}
+
+@media screen and (min-width: 900px) {
+  
+  .marketing {
+    margin-top: 120px;
+    }
+    
+   .decorative-line-marketing {
+      content: url(../img/decorative_1about_desktop.svg);
+      top: 301px;
+      left: 620px;
+      z-index: -6;
+    }
+
+  .marketing-image {
+    background: url('../img/bkgr_marketing_desktop.jpg') #112B45 no-repeat center; 
+    background-size: 1139px 362px;
+    width: 1139px;
+    height: 362px;
+    border-radius: 220px;
+    margin-bottom: -24px;
+    position: relative;
+    }
+    
+    /* animation starts. Only CSS Houdini - supported browsers */ 
+  
+    @property --angle-rotate {
+      syntax: "<angle>";
+      initial-value: 268deg;
+      inherits: false;
+    }
+
+    @keyframes spin {
+      from {
+        --angle-rotate: 0deg;
+      }
+      to {
+        --angle-rotate: 360deg;
+      }
+    }
+
+    .marketing-image::before, .marketing-image::after  {
+      width: 1088px;
+      height: 281px;
+      top: -11px;
+      left: 26px;
+      background: linear-gradient(var(--angle-rotate), #315BEF 3.51%, #66DD8D 98.41%);
+      animation: spin 2.5s linear infinite;
+      filter: blur(32px);
+    }
+    
+    .request-button:hover, 
+      .request-button:active, 
+      .request-button:focus {
+          background: linear-gradient(var(--angle-rotate), #315BEF 3.51%, #66DD8D 98.41%);
+          animation: spin 2.5s linear infinite;
+          transition: 1s;
+      }
+     
+    /* animation ends */ 
+
+  .marketing h2 {
+    margin-bottom: 24px;
+    margin-left: 93px;
+    z-index: 3;
+    font-size: 64px;
+    line-height: 58px;
+    position: relative;
+    }
+      
+  .marketing-info {
+    margin-bottom: 32px;
+    margin-left: 93px;
+    max-width: 423px;
+    display: block;
+    }
+     
+  .marketing .request-button {
+    margin-left: 93px;
+  }
+}
+
+/* end of Marketing section */
+
+/* Services section start */
+
+.services {
+  margin-top: 58px;
+}
+
+.services .wrapper {
+  position: relative;
+}
+
+.services h2 {
+  font-size: 48px;
+  line-height: 43px;
+  margin-bottom: 16px;
+  position: relative;
+}
+
+.services h2::before {
+  content: "";
+  width: 136px;
+  height: 136px;
+  background: #66DD8D;
+  opacity: 0.4;
+  filter: blur(50px);
+  position: absolute;
+  top: -130px;
+  left: -70px;
+  z-index: -3; 
+}
+
+.decorative-line-services {
+  content: url(../img/decorative_2services_mobile.svg);
+  position: absolute;
+  top: 13px;
+  left: 165px;
+}
+
+.services ul {
+  display: grid;
+  gap: 24px;
+}
+
+.services li {
+  width: 100%;
+  background: rgba(25, 63, 102, 0.32);
+  backdrop-filter: blur(16px);
+  border-radius: 24px;
+  padding: 16px;
+}
+
+.services li h4 {
+  font-size: 24px;
+  line-height: 22px;
+  margin-bottom: 16px;
+}
+
+.services li h4::before {
+  padding-top: 8px;
+  margin-bottom: 80px;
+  display: block;
+}
+
+.services li:nth-child(1) h4::before {
+  content: url(../img/services1_data.svg);
+  padding-left: 12px;
+  width: 24px;
+  height: 32px;
+}
+
+.services li:nth-child(2) h4::before {
+  content: url(../img/services2_window.svg);
+  padding-left: 6px;
+  width: 36px;
+  height: 32px;
+}
+
+.services li:nth-child(3) h4::before {
+  content: url(../img/services3_clock.svg);
+  padding-left: 6px;
+  padding-top: 6px;
+  width: 36px;
+  height: 36px;
+}
+
+.services li p {
+  margin-bottom: 32px;
+}
+
+@media screen and (min-width: 900px) {
+  .services {
+    margin-top: 200px;
+  }
+  
+  .services h2 {
+    font-size: 128px;
+    line-height: 117px;
+    margin-bottom: -26px;
+    margin-left: 93px;
+  }
+
+  .services h2::before {
+    width: 288px;
+    height: 288px;
+    opacity: 0.7;
+    filter: blur(150px);
+    top: -190px;
+    left: -450px;    
+  }
+
+  .decorative-line-services {
+    content: url(../img/decorative_2services_desktop.svg);
+    top: 34px;
+    left: 602px;
+  }
+  .services ul {
+   grid-template-columns: 1fr 1fr 1fr;
+   /*в дизайне средняя колонка на 28px шире других, 
+   а паддинги в 3-й колонке меньше, чем в первых двух. 
+   Эти различия больше похожи на баг, чем на фичу, 
+   поэтому делаю колонки и отступы равными*/
+   gap: 10px;  
+  }
+
+  .services li {
+    display: grid;
+    backdrop-filter: blur(24px);
+    padding: 26px;
+  }
+
+  .services li:first-child {
+    z-index: -1;
+  }
+
+  .services li h4 {
+    margin-bottom: 24px;
+  }
+  
+  .services li h4::before {
+  padding-top: 11px;
+  margin-bottom: 122px;  
+  }
+
+  .services .request-button {
+    margin-bottom: 30px;
+    align-self: end;
+  }
+}
+
+/* end of Services section */
+
+/* Founder section start */
+
+.founder {
+  margin-top: 58px;
+}
+
+.founder h2 {
+  font-size: 48px;
+  line-height: 43px;
+  margin-bottom: 8px;
+  position: relative;
+}
+
+.founder h2::after { 
+  content: "";
+  width: 136px;
+  height: 136px;
+  background: #66DD8D;
+  opacity: 0.4;
+  filter: blur(50px);
+  position: absolute;
+  top: 80px;
+  left: 220px;
+  z-index: -3; 
+}
+
+.founder p {
+  margin-bottom: 24px;
+}
+
+.founder img {
+  width: 288px;
+  height: 180px;
+  border-radius: 24px;
+  position: relative;
+  z-index: 2;
+}
+
+@media screen and (min-width: 900px) {
+  .founder {
+    margin-top: 0px;
+  }
+  
+  .founder .wrapper {
+    display: flex;
+    position: relative;
+  }
+
+  .decorative-line-founder {
+    content: url(../img/decorative_3founder_desktop.svg);
+    position: absolute;
+    top: 429px;
+    left: 435px;
+  }
+
+  .founder img {
+    margin-top: 200px;
+    width: 500px;
+    height: 419px;
+    order: 1;
+  }
+
+  .founder h2 {
+    font-size: 128px;
+    line-height: 117px;
+    margin-top: 293px;
+    margin-bottom: 21px;
+    margin-left: 48px;
+    order: 2;
+  }
+
+  .founder h2::after {
+    width: 320px;
+    height: 320px;
+    filter: blur(150px);
+    top: -70px;
+    left: 650px;       
+  }
+
+  .founder p {
+    order: 3;
+    margin-left: -280px;
+    margin-top: 431px;
+  }
+}
+
+/* end of Founder section */
+
+/* Contacts section start */
+
+.contact-info-wrapper {
+  position: relative;
+}
+
+.contact-info-wrapper::before {
+  content: "";
+  background: url('../img/bkgr_contacts_white-clouds.png') no-repeat;
+  position: absolute;
+  background-size: contain;
+  width: 1021px;
+  height: 539px;
+  left: -30px;
+  top: -145px;
+  opacity: 0.7;
+  transform: rotate(21.85deg);
+}
+
+.contacts h2 {
+  margin-top: 101px;
+  font-size: 0;
+}
+
+.contacts p {
+  font-size: 24px;
+  line-height: 22px;
+  text-align: center;
+  padding-bottom: 13px;
+}
+
+.contacts p:last-child {
+  padding-bottom: 24px;
+}
+
+/* form start */ 
+
+.contacts form {
+  width: 288px;
+  min-height: 505px;
+  background: rgba(134, 134, 134, 0.22);
+  backdrop-filter: blur(8px);
+  /* Note: backdrop-filter has minimal browser support */
+  border-radius: 24px;
+  margin-bottom: 33px;
+}
+
+.contacts fieldset {
+  padding: 16px;
+  line-height: 0; /*this was needed to manually style the line-heights so they don't go out of place*/
+  font-size: 16px; /*the font for all form fields*/
+ }
+
+.contacts form legend {
+  font-size: 32px;
+  line-height: 29px;
+  padding-top: 16px;
+}
+
+.contacts input, 
+ .contacts select,
+ .contacts option {
+  width: 100%;
+  background: transparent;
+  border-bottom: solid 1px #EBEBEB;
+  line-height: 22px;
+  padding-top: 16px;
+  padding-bottom: 4px;
+}
+
+.floating-labels label {
+  display: inline-block;
+  transform: translate(-1px, -22px); /*translateY = line-height per design*/
+  /*floating labels ideas: https://codepen.io/team/css-tricks/pen/XVBLRM; https://dev.to/felix/floating-input-placeholders-with-html-css-ej4 */
+  transition: all 0.2s ease-out;
+}
+
+.floating-labels input::placeholder {
+  opacity: 0; /*можно его и показать, но думаю, что будет визуально перегружено*/
+}
+
+.floating-labels input:focus + label,
+.floating-labels input:not(:placeholder-shown) + label {
+  transform: translate(0, -38px);
+  transition: all 0.2s ease-out;
+  font-size: 0.8rem;
+}
+
+.floating-labels input:hover + label {
+  opacity: 0.7;
+}
+
+input[type="text"],
+input[type="email"],
+input[type="tel"],
+input[type="datetime-local"],
+select {
+  color: #66DD8D; 
+  font-size: 16px;
+  font-family: 'Manrope', Arial, sans-serif;
+}
+
+/* "Select" was styled based on https://www.w3docs.com/snippets/css/how-to-create-a-placeholder-for-an-html5-select-box-by-using-only-html-and-css.html */
+
+label[for="origin-field"] {
+  display: block;
+  transform: scale(0);
+} 
+
+.contacts select:required:invalid {
+  font-size: 16px;
+  color: #FFFFFF;
+  line-height: 22px;
+}
+
+/*Стрелочка сбоку белая, а не зелёная; её можно перекрасить, 
+если полностью убрать appearance и от руки стилизовать все состояния; 
+но в данном случае эта мелочь дизана, по-моему, не стоит всего требуемого кода
+и рисков, что при отмене автоматического внешнего вида что-то слетит. 
+Тут и так сложный код с учётом floating labels и искусственного плейсхолдера.  */
+
+.contacts option[value=""][disabled] {
+  display: none;
+}
+.contacts option {
+  background: rgba(104, 104, 104, 0.6);
+}
+
+label[for="datetime-field"] {
+  position: relative;
+}
+
+label[for="datetime-field"]::after {
+  content: url('../img/icon_calendar.png');
+  display: inline-block;
+  position: absolute;
+  padding-left: 40px;
+  top: -11px;
+} 
+
+.floating-labels input:focus + label[for="datetime-field"]::after,
+.floating-labels input:not(:placeholder-shown) + label[for="datetime-field"]::after {
+  transform: scale(0);
+}
+
+input[name="datetime-field"]::-webkit-calendar-picker-indicator {
+  filter: invert(1); /*не считаю необходимым подменять работающую в бразузере систему, лучше буду использовать его иконку, перекрасив её*/
+  }
+
+.contacts label[for="pers-data-field"] {
+  font-size: 14px;
+  line-height: 18px;
+  padding-left: 12px;
+} 
+
+.contacts form input[type="checkbox"] {
+  display: inline-block;
+  margin-top: 27px;
+  width: auto;
+  position: relative;
+}
+
+.contacts form input[type="checkbox"]:not(:checked) {
+  box-shadow: inset 0px 0 0px 2px #66DD8D;
+}
+
+.contacts form input[type="checkbox"]:checked {
+  color: #66DD8D;
+  box-shadow: inset 0px 0 0px 8px #3e4347, 0px 0 0px 3px #66DD8D;
+  background-color: #3e4347;
+  /*чтобы не обнулять все автоматические браузерные стили, накладываю иконку поверх*/
+}
+
+.contacts form input[type="checkbox"]:checked::before {
+  content: url('../img/icon_checked_box.png');
+  position: absolute;
+  top: -2px;
+  left: -2px;
+}
+
+.contacts form .request-button {
+  margin-top: 16px;
+}
+@media screen and (min-width: 900px) {
+  .contacts .wrapper {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 30px;
+  }
+  
+  .contact-info-wrapper::before {
+    width: 1351px;
+    height: 713px;
+    left: -558px;
+    top: 0px;
+    opacity: 1;
+    transform: none;
+  }
+
+  .contact-info-wrapper, .contacts-form {
+    margin-top: 200px;
+  }
+
+  .contacts h2 {
+    margin-top: 412px;
+    margin-bottom: 64px;
+    font-size: 128px;
+    line-height: 117px;
+  }
+
+  .contacts p {
+    font-size: 64px;
+    line-height: 59px;
+    text-align: left;
+    padding-bottom: 32px;
+  }
+
+  .contacts form {
+    width: 559px;
+    min-height: 743px;
+    background: rgba(104, 104, 104, 0.26);
+    border-radius: 32px;
+    margin-bottom: 98px;
+  }
+  
+  .contacts fieldset {
+    padding-left: 32px;
+    padding-right: 42px;
+    line-height: 0;
+    font-family: 'Oxygen', Tahoma, sans-serif;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 24px;
+  }
+  
+  .contacts form legend {
+    font-size: 64px;
+    line-height: 59px;
+    padding-top: 32px;
+  }
+ 
+  .contacts input, 
+  .contacts select,
+  .contacts option {
+    padding-top: 24px;
+    padding-bottom: 8px;
+    line-height: 30px;
+  }
+
+  .floating-labels  label {
+    transform: translate(-1px, -30px);
+  }
+
+  .floating-labels input:focus + label,
+  .floating-labels input:not(:placeholder-shown) + label {
+    transform: translate(0, -55px);
+    font-size: 0.8rem;
+  }
+
+  input[type="text"],
+  input[type="email"],
+  input[type="tel"],
+  input[type="datetime-local"],
+  select {
+    font-size: 24px;
+    font-family: 'Oxygen', Tahoma, sans-serif;
+  }
+
+  .contacts select:required:invalid {
+    font-size: 24px;
+    line-height: 30px;
+  }
+
+  label[for="datetime-field"]::after {
+    padding-left: 170px;
+  } 
+  
+  
+  .contacts form input[type="checkbox"] {
+    margin-top: 36px;
+  }
+  
+  .contacts form .request-button {
+    margin-top: 27px;
+  }
+}
+
+/* end of Contacts section */
+
+/* pers-data-processing section start */
+
+.pers-data-processing  {
+  display: block;
+  color: #D4D4D4;
+  margin-top: 32px; /*тут маржин снизу вверх, потому что на главной странице маржин другой, там тоже снизу вверх*/
+  margin-bottom: 64px;
+  max-width: 895px;
+  /*В дизайне ширина абзацев варьируется, вероятно, чтобы создать визуально красивую форму страницы. 
+    Я не стала pixel-perfect это повторять: 
+    как только сгенерится новая легальная страница, вся красивая верстка поедет. */
+}
+
+.pers-data-processing  h1 {
+  font-size: 24px;
+  line-height: 22px;
+  color: #FFFFFF;
+  margin-bottom: 24px;
+}
+
+.pers-data-processing  h3 {
+  /*Использую h3 для этой секции, чтобы h2 стилизовать иначе для главной*/
+  font-weight: 700;
+  font-size: 24px;
+  line-height: 30px;
+  margin-bottom: 24px;
+}
+
+.pers-data-processing p {
+  margin-bottom: 16px;
+}
+
+.pers-data-processing ul {
+  margin-bottom: 24px;
+  margin-left: 24px;
+}
+
+.pers-data-processing li {
+  margin-bottom: 8px;
+}
+
+.pers-data-processing a {
+  color: inherit;
+}
+
+/* end of Pers Data Processing */
+
+/* footer start */
+
+footer {
+  background: url("../img/symbol_white2_footer_mobile.png")  #081D31 no-repeat center;
+  background-size: 320px 561px; 
+  margin: 0 auto;
+}
+
+.footer-wrapper {
+  min-height: 561px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+.footer-top {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  width: 100%;
+  margin-top: 16px;
+}
+
+.footer-top a {
+  text-decoration: none;
+  font: inherit;
+  color: inherit;
+}
+
+.footer-menu-list .menu-item {
+  margin-bottom: 8px;
+}
+
+.footer-menu-list .menu-item a:hover, 
+.footer-menu-list .menu-item a:active, 
+.footer-menu-list .menu-item a:focus {
+color: #66DD8D;
+}
+
+.footer-social {
+  max-width: 40%;
+}
+
+.social-media-title {
+  font-size: 16px;
+  line-height: 24px;
+  color: #F4F4F4;
+}
+
+.button-social {
+  display: inline-block;
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  margin-right: 8px;
+  background: #315BEF no-repeat center;
+}
+
+.facebook-icon {
+  background-image: url('../img/icon_facebook.svg');
+  background-size: 12px 12px;  /*почему-то только из этого правила браузер этот размер считывает*/
+}
+
+.insta-icon {
+  background-image: url('../img/icon_instagram.svg');
+  background-size: 12px 12px;  
+}
+
+.twitter-icon {
+  background-image: url('../img/icon_twitter.svg');
+  background-size: 12px 12px;  }
+
+.linkedin-icon {
+  background-image: url('../img/icon_linkedin.svg');
+  background-size: 12px 12px;  
+}
+
+.telegram-icon {
+  background-image: url('../img/icon_telegram.svg');
+  background-size: 12px 12px;  
+}
+
+.whatsapp-icon {
+  background-image: url('../img/icon_whatsapp.svg');
+  background-size: 12px 12px;  
+}
+
+.button-social:hover, 
+.button-social:active, 
+.button-social:focus {
+  box-shadow: 0 0 2px 4px #315BEF;
+}
+
+.footer-legal {
+  width: 100%;
+}
+
+.legal-link {
+  display: block;
+  font-size: 14px;
+  line-height: 19px;
+  margin-bottom: 8px;
+}
+
+.legal-link:hover, 
+.legal-link:active, 
+.legal-link:focus {
+  color: #F4F4F4;
+}
+
+footer .logo-img {
+  width: 218px;
+  height: auto;
+}
+
+.footer-slogan-text {
+  font-size: 24px;
+  line-height: 36px;
+  color: #F4F4F4;
+}
+
+/* для десктопов - футер */ 
+@media screen and (min-width: 900px) {
+  footer {
+    background: url('../img/symbol_white1_footer_desktop.png') #081D31 no-repeat center;
+    background-size: 562px 450px; 
+  }
+  
+  .footer-wrapper {
+    min-height: 450px;
+    align-content: space-between;
+    align-items: center;
+    }
+
+  .footer-top {
+      margin-top: 32px;
+    }
+
+  .footer-menu-list .menu-item {
+      display: inline-block;
+      margin-right: 32px;
+    }
+
+  .social-media-title {
+      font-size: 24px;
+      line-height: 36px;
+      font-weight: 700;
+      text-align: right;
+    }
+
+    .button-social {
+      width: 48px;
+      height: 48px;
+      background-size: 24px 24px;
+     }
+
+     footer .logo-link {
+      order: 2;
+     }
+
+     footer .logo-img {
+      width: 249px;
+     }
+     .footer-slogan {
+      order: 3;
+      width: 396px;
+     }
+
+     .footer-legal {
+      order: 4;
+      width: auto;
+     }
+  }
+
+  /* Конец футера для десктопов*/
