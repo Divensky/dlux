@@ -822,38 +822,12 @@ select {
   font-family: 'Manrope', Arial, sans-serif;
 }
 
-/* "Select" was styled based on https://www.w3docs.com/snippets/css/how-to-create-a-placeholder-for-an-html5-select-box-by-using-only-html-and-css.html */
-
-label[for="origin-field"] {
-  display: block;
-  transform: scale(0);
-} 
-
-.contacts select:required:invalid {
-  font-size: 16px;
-  color: #FFFFFF;
-  line-height: 22px;
-}
-
-/*Стрелочка сбоку белая, а не зелёная; её можно перекрасить, 
-если полностью убрать appearance и от руки стилизовать все состояния; 
-но в данном случае эта мелочь дизана, по-моему, не стоит всего требуемого кода
-и рисков, что при отмене автоматического внешнего вида что-то слетит. 
-Тут и так сложный код с учётом floating labels и искусственного плейсхолдера.  */
-
-.contacts option[value=""][disabled] {
-  display: none;
-}
-.contacts option {
-  background: rgba(31, 26, 26, 0.6);
-}
-
 label[for="datetime-field"] {
   position: relative;
 }
 
 label[for="datetime-field"]::after {
-  content: url('../img/icon_calendar.png');
+  content: url('../img/Icon_Calendar.svg');
   display: inline-block;
   position: absolute;
   padding-left: 40px;
@@ -868,6 +842,43 @@ label[for="datetime-field"]::after {
 input[name="datetime-field"]::-webkit-calendar-picker-indicator {
   filter: invert(1); /*не считаю необходимым подменять работающую в бразузере систему, лучше буду использовать его иконку, перекрасив её*/
   }
+
+/* "Select" was styled based on https://www.w3docs.com/snippets/css/how-to-create-a-placeholder-for-an-html5-select-box-by-using-only-html-and-css.html */
+
+.contacts select:required:invalid {
+  font-size: 16px;
+  color: #FFFFFF;
+  line-height: 22px;
+}
+
+.contacts option {
+  background: #2a3f53;
+}
+
+.contacts option[value=""][disabled] {
+  display: none;
+}
+
+label[for="origin-field"] {
+  font-size: 0;
+  position: relative;
+} 
+
+label[for="origin-field"]::after {
+  content: url(../img/Icon_Caret_Down_SM.svg);
+  display: inline-block;
+  position: absolute;
+  top: -75px;
+  left: 229px;
+  pointer-events: none;
+  padding: 5px 1px;
+  background-color: #2a3f53;
+/*Этот элемент рисует зелёную стрелочку поверх элемента по умолчанию: белой стрелочки сбоку. 
+Более радикальный вариант - задать appearance:none, 
+но тогда надо вручную стилизовать все состояния при наведении и т.п.; 
+я хотела обойтись без дополнительного кода.
+Тут и так сложный код с учётом floating labels и искусственного плейсхолдера.  */
+}
 
 .contacts label[for="pers-data-field"] {
   font-size: 14px;
@@ -888,21 +899,21 @@ input[name="datetime-field"]::-webkit-calendar-picker-indicator {
 
 .contacts form input[type="checkbox"]:checked {
   color: #66DD8D;
-  box-shadow: inset 0px 0 0px 8px #3e4347, 0px 0 0px 3px #66DD8D;
-  background-color: #3e4347;
-  /*чтобы не обнулять все автоматические браузерные стили, накладываю иконку поверх*/
+  box-shadow: inset 0px 0 0px 8px #2a3f53, 0px 0 0px 1px #66DD8D;
+  /*чтобы не обнулять все автоматические браузерные стили, накладываю зелёную галочку поверх*/
 }
 
 .contacts form input[type="checkbox"]:checked::before {
-  content: url('../img/icon_checked_box.png');
+  content: "\2713";
   position: absolute;
-  top: -2px;
-  left: -2px;
+  top: -4px;
+  left: 2px;
 }
 
 .contacts form .request-button {
   margin-top: 16px;
 }
+
 @media screen and (min-width: 900px) {
   .contacts .wrapper {
     display: grid;
@@ -996,12 +1007,20 @@ input[name="datetime-field"]::-webkit-calendar-picker-indicator {
   label[for="datetime-field"]::after {
     padding-left: 170px;
   } 
-  
-  
+
+  label[for="origin-field"]::after {
+    top: -90px;
+    left: 456px;
+    background-color: #283b4e;
+  }  
+
   .contacts form input[type="checkbox"] {
     margin-top: 36px;
   }
   
+  .contacts form input[type="checkbox"]:checked::before {
+    top: -8px;
+  } 
   .contacts form .request-button {
     margin-top: 27px;
   }
