@@ -615,7 +615,7 @@ header.active .menu-flyout-contact.phone {
   }
 
   .services li:first-child {
-    z-index: -1;
+    backdrop-filter: none;
   }
 
   .services li h4 {
