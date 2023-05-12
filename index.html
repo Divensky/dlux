@@ -14,7 +14,7 @@
         <header>
             <div class="wrapper header-wrapper">
                 <section class="header-top">
-                    <a href="#" class="logo-link">
+                    <a class="logo-link">
                         <img src="img/logo_a.png" alt="dLux Services" class="logo-img" width="114" height="75" />
                     </a>
                         
@@ -89,16 +89,18 @@
                     <h2 id="founder">Founder</h2>
                     <span class="decorative-line-founder"></span>
                     <p>Balazs, 20 years experience in cloud development, leader and contributor of many projects with billions of users as a senior Google</p>
-                    <img src="img/founder_mobile.jpg" alt="Balazs" 
-                        srcset="img/founder_mobile.jpg 288w, img/founder_desktop.jpg 500w"
-                        sizes="(max-width: 900px) 288px, 500px" />
+                    <div class="img-wrapper">
+                        <img src="img/founder_mobile.jpg" alt="Balazs" 
+                            srcset="img/founder_mobile.jpg 288w, img/founder_desktop.jpg 500w"
+                            sizes="(max-width: 900px) 288px, 500px" />
+                    </div>                
                 </div>
             </section>
                
             <section class="contacts">
                 <div class="wrapper">
                     <div class="contact-info-wrapper" id="contacts">
-                        <h2>Contacts</h2>
+                        <h2 class="desktop-only">Contacts</h2>
                         <p class="accent-font">1@dlux.services</p>
                         <p class="accent-font">+118143511265</p>
                     </div>
@@ -113,7 +115,7 @@
                                 <input type="text" name="company-field" id="company-field" placeholder="Company" />
                                 <label for="company-field">Company</label>
                                 <input type="tel" name="phone-field" id="phone-field" placeholder="Callback phone number" />
-                                <label for="phonefield">Callback phone number</label>
+                                <label for="phone-field">Callback phone number</label>
                                 <input type="text" onfocus="(this.type='datetime-local')" onblur="(this.type='text')" name="datetime-field" id="datetime-field" placeholder="When is a good time to call" />
                                 <!-- https://www.geeksforgeeks.org/how-to-set-placeholder-value-for-input-type-date-in-html-5/ -->
                                 <label for="datetime-field">When is a good time to call</label>
@@ -178,4 +180,4 @@
         </footer>
       <script src="js/script.js"></script>
     </body>
-
+</html>
