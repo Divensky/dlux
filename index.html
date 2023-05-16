@@ -14,23 +14,41 @@
         <header>
             <div class="wrapper header-wrapper">
                 <section class="header-top">
-                    <a class="logo-link">
-                        <img src="img/logo_a.png" alt="dLux Services" class="logo-img" width="114" height="75" />
+                    <a class="logo-link" href="#about">
+                        <picture>
+                            <source media="(max-width: 899px)" 
+                                srcset="img/logo_header_mobile1x.png 1x, img/logo_header_mobile2x.png 2x, img/logo_header_mobile1x.png 3x" 
+                                width="114" height="75" 
+                                />
+                            <source media="(min-width: 900px)" 
+                                srcset="img/logo_header_desktop1x.png 1x, img/logo_header_desktop2x.png 2x, img/logo_header_desktop3x.png 3x" 
+                                width="159" height="104" 
+                                />
+                        
+                            <img src="img/logo_header_desktop1x.png" 
+                               alt="dLux Services" 
+                                class="logo-img" 
+                                />
+
+                        </picture>
                     </a>
                         
                     <nav class="header-nav">
-                        <a href="#" class="menu-logo-link mobile-only toggle">
-                            <img src="img/menu_mobile.png" alt="Menu" class="menu-logo-img mobile-only"/>
+                        <a class="menu-logo-link mobile-only toggle">
+                            <img src="img/icon_menu.svg" alt="Menu" 
+                                class="menu-logo-img mobile-only"
+                                width="14" height="10" />
+                            <!-- "icon_exit_menu.svg" replaces it through js --> 
                         </a>
                                         
                         <ul class="header-menu-list nobullet">
-                                <li class="flyout-only menu-flyout-title accent-font"><a tabindex="0">Menu</a></li>
+                                <li class="flyout-only menu-flyout-title accent-font">Menu</li>
                                 <li class="menu-item"><a href="#about">About</a></li>
                                 <li class="menu-item"><a href="#services">Services</a></li>
                                 <li class="menu-item"><a href="#founder">Founder</a></li>
                                 <li class="menu-item"><a href="#contacts">Contacts</a></li>
-                                <li class="flyout-only menu-flyout-contact email accent-font"><a tabindex="0">1@dlux.services</a></li>
-                                <li class="flyout-only menu-flyout-contact phone accent-font"><a tabindex="0">+18143511265</a></li>
+                                <li class="flyout-only menu-flyout-contact email accent-font"><a href="mailto:1@dlux.services">1@dlux.services</a></li>
+                                <li class="flyout-only menu-flyout-contact phone accent-font"><a href="tel:+118143511265">+118143511265</a></li>
                         </ul>
                     </nav>
                 </section>
@@ -64,19 +82,19 @@
                     <span class="decorative-line-services"></span>
                     <ul class="services-list nobullet">
                         <li>
-                            <h4>Cloud based development</h4>
+                            <strong>Cloud based development</strong>
                             <p>Develop an app for your project: web and mobile apps for your custom business needs on Amazon Web Services, Google Cloud Platform or your private cloud.</p>
                             <a href="#request-form" class="request-button">Send a request</a>
                         </li>
 
                         <li>
-                            <h4>Remote development teams</h4>
+                            <strong>Remote development teams</strong>
                             <p>Manage and improve your services with a dedicated development team that covers all functions. You only need to define the tasks and priorities, we are doing the rest.</p>
                             <a href="#request-form" class="request-button">Send a request</a>
                         </li>
 
                         <li>
-                            <h4>Infrastructure management</h4>
+                            <strong>Infrastructure management</strong>
                             <p>We monitor your services and keep them running 24/7</p>
                             <a href="#request-form" class="request-button">Send a request</a>
                         </li>
@@ -84,25 +102,54 @@
                 </div>    
             </section>
 
+            <div class="clouds-wrapper">
+                <div class="clouds"></div>
+            </div>
+            
             <section class="founder">
                 <div class="wrapper">
                     <h2 id="founder">Founder</h2>
                     <span class="decorative-line-founder"></span>
                     <p>Balazs, 20 years experience in cloud development, leader and contributor of many projects with billions of users as a senior Google</p>
                     <div class="img-wrapper">
-                        <img src="img/founder_mobile.jpg" alt="Balazs" 
-                            srcset="img/founder_mobile.jpg 288w, img/founder_desktop.jpg 500w"
-                            sizes="(max-width: 900px) 288px, 500px" />
+                        <picture>
+                            <source media="(max-width: 899px)" 
+                                type="image/webp"
+                                srcset="img/founder_mobile1x.webp 1x, img/founder_mobile2x.webp 2x, img/founder_mobile3x.webp 3x" 
+                                width="288" height="180" 
+                                />
+                            <source media="(min-width: 900px)" 
+                                type="image/webp"
+                                srcset="img/founder_desktop1x.webp 1x, img/founder_desktop2x.webp 2x, img/founder_desktop3x.webp 3x" 
+                                width="500" height="419" 
+                                />
+                            <source media="(max-width: 899px)" 
+                                type="image/jpeg"
+                                srcset="img/founder_mobile1x.jpg 1x, img/founder_mobile2x.jpg 2x, img/founder_mobile3x.jpg 3x" 
+                                width="288" height="180" 
+                                />
+                            <source media="(min-width: 900px)" 
+                                type="image/jpeg"
+                                srcset="img/founder_desktop1x.jpg 1x, img/founder_desktop2x.jpg 2x, img/founder_desktop3x.jpg 3x" 
+                                width="500" height="419" 
+                                />
+                                    
+                            <img src="img/founder_desktop1x.jpg" 
+                                alt="Balazs" 
+                                loading="lazy" />
+                        </picture>
                     </div>                
                 </div>
             </section>
-               
+
+
             <section class="contacts">
                 <div class="wrapper">
                     <div class="contact-info-wrapper" id="contacts">
                         <h2 class="desktop-only">Contacts</h2>
-                        <p class="accent-font">1@dlux.services</p>
-                        <p class="accent-font">+118143511265</p>
+                        <a href="mailto:1@dlux.services" class="accent-font notextdecoration">1@dlux.services</a>  
+                        <a href="tel:+118143511265" class="accent-font notextdecoration">+118143511265</a>
+                        
                     </div>
                     <form action="#" method="post" name="request-form" id="request-form" class="contacts-form">
                         <fieldset>
@@ -151,7 +198,7 @@
                     </ul>
 
                     <div class="footer-social">
-                        <h4 class="social-media-title accent-font">Social media</h4>
+                        <strong class="social-media-title accent-font">Social media</strong>
                         <a href="#" class="button-social facebook-icon"></a>
                         <a href="#" class="button-social insta-icon"></a>
                         <a href="#" class="button-social twitter-icon"></a>
@@ -161,15 +208,32 @@
                     </div>
                 </div>
 
-                <div class="footer-legal">
+                <div class="footer-legal accent-color">
                     <a href="#" class="legal-link">Privacy Policy</a>
                     <a href="#" class="legal-link">Rules for the processing of personal data</a>
                     <a href="#" class="legal-link">Website Terms of Use</a>
                     <!-- в дизайне для мобильных только одна из этих строчек, а не все три. Думаю, что это ошибка и все три нужны. Но если я неправа, легко добавить visually-hidden -->
                 </div>
                          
-                <a href="#" class="logo-link">
-                    <img src="img/logo_a.png" alt="dLux Services" class="logo-img" width="114" height="75" />
+                <a class="logo-link" href="#about">
+                
+                    <picture>
+                        <source media="(max-width: 899px)" 
+                            srcset="img/logo_footer_mobile1x.png 1x, img/logo_footer_mobile2x.png 2x, img/logo_footer_mobile1x.png 3x" 
+                            width="218" height="109" 
+                            />
+                        <source media="(min-width: 900px)" 
+                            srcset="img/logo_footer_desktop1x.png 1x, img/logo_footer_desktop2x.png 2x, img/logo_footer_desktop3x.png 3x" 
+                            width="249" height="125" 
+                            />
+                    
+                        <img src="img/logo_footer_desktop1x.png" 
+                            alt="dLux Services" 
+                            class="logo-img" 
+                            loading="lazy" 
+                            />
+
+                    </picture>
                 </a>
 
                 <div class="footer-slogan">

@@ -49,7 +49,66 @@
         </header>
         <main>
 
+            <section class="founder">
+                <div class="wrapper">
+                    <h2 id="founder">Founder</h2>
+                    <span class="decorative-line-founder"></span>
+                    <p>Balazs, 20 years experience in cloud development, leader and contributor of many projects with billions of users as a senior Google</p>
+                    <div class="img-wrapper">
+                        <img src="img/founder_mobile.jpg" alt="Balazs" 
+                            srcset="img/founder_mobile.jpg 288w, img/founder_desktop.jpg 500w"
+                            sizes="(max-width: 900px) 288px, 500px" />
+                    </div>                
+                </div>
+            </section>
+            <div class="clouds-wrapper">
+                <div class="clouds"></div>
+            </div>
+            <section class="contacts">
+      
+                <div class="wrapper">
+              
 
+                    <div class="contact-info-wrapper" id="contacts">
+                        <h2 class="desktop-only">Contacts</h2>
+                        <p class="accent-font">1@dlux.services</p>
+                        <p class="accent-font">+118143511265</p>
+                    </div>
+                    <form action="#" method="post" name="request-form" id="request-form" class="contacts-form">
+                        <fieldset>
+                            <legend>
+                                Send <span class="accent-color">a request</span>                              
+                            </legend>
+                            <div class="floating-labels">
+                                <input type="text" name="name-field" id="name-field" placeholder="Name" />
+                                <label for="name-field">Name</label>
+                                <input type="text" name="company-field" id="company-field" placeholder="Company" />
+                                <label for="company-field">Company</label>
+                                <input type="tel" name="phone-field" id="phone-field" placeholder="Callback phone number" />
+                                <label for="phone-field">Callback phone number</label>
+                                <input type="text" onfocus="(this.type='datetime-local')" onblur="(this.type='text')" name="datetime-field" id="datetime-field" placeholder="When is a good time to call" />
+                                <!-- https://www.geeksforgeeks.org/how-to-set-placeholder-value-for-input-type-date-in-html-5/ -->
+                                <label for="datetime-field">When is a good time to call</label>
+                                <input type="email" name="email-field" id="email-field" placeholder="Email" required />
+                                <label for="email-field">Email</label>
+                                <input type="text" name="what-field" id="what-field" placeholder="What can we help you with?" />
+                                <label for="what-field">What can we help you with?</label>
+                                </div>
+                            <select name="origin-field" id="origin-field" required >
+                                <option value="" disabled selected>How did you find us?</option>
+                                <option value="Friends">Friends</option>
+                                <option value="Search">Search</option>
+                                <option value="Social media">Social media</option>
+                                <option value="Other">Other</option>
+                            </select>
+                            <label for="origin-field">How did you find us?</label>
+                            <input type="checkbox" name="pers-data-field" id="pers-data-field" checked />
+                            <label for="pers-data-field">I agree with the personal data processing policy</label>
+                            <button class="request-button narrow" type="submit">Send a request</button>
+                        </fieldset>
+                    </form>
+                </div>   
+            </section>
 
 
         </main>

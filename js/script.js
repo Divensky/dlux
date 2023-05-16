@@ -6,12 +6,12 @@ function toggleMenu() {
     if (menu.classList.contains("active")) {
         menu.classList.remove("active");
             // change the menu icon to mobile menu
-            toggle.querySelector("img").src = "img/menu_mobile.png";
+            toggle.querySelector("img").src = "img/icon_menu.svg";
     } else {
         menu.classList.add("active");
 
         // change the menu icon to close button
-        toggle.querySelector("img").src = "img/menu_exit.png";
+        toggle.querySelector("img").src = "img/icon_exit_menu.svg";
     }
 }
 /* Event Listener */
