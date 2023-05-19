@@ -17,7 +17,7 @@ video {
   height: auto;
 }
 
-/* пригодится, если переводить в Less:
+/* List of key colors for reference
 @navy_bkgr: #112B45;
 @white: #FFFFFF;
 @blue: #315BEF;
@@ -518,10 +518,6 @@ header.active .menu-flyout-contact.phone {
 /* end of Marketing section */
 
 /* Services section start */
-
-.services {
-  /* margin-top: 58px; */
-}
 
 .services .wrapper {
   position: relative;
@@ -1150,10 +1146,6 @@ label[for="origin-field"] {
     font-size: 24px;
     line-height: 30px; /*px value to match translateY*/
   }
-
-  label[for="datetime-field"]::after {
-    /*padding-left: 170px;*/
-  } 
 
   label[for="origin-field"]::after {
     top: -90px;
