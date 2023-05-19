@@ -83,17 +83,12 @@ body {
     font-size: 1rem;
     line-height: 1.25;
     color: #FFFFFF;
-    
     margin: 0 auto;
-
-    /* max-width: 1200px; */
-    outline: 2px solid pink;
 }
 
 .wrapper {
   margin: 0 auto;
   max-width: 1200px;
-  outline: 3px dashed aqua;
 }
 
 .nobullet {
@@ -190,6 +185,11 @@ header a {
   color: #66DD8D;
 }
 
+.menu-logo-link {
+  display: inline-block;
+  padding: 12px; /*increase tap target size*/
+}
+
 /* fly-out menu */
 
 header.active .menu-logo-img {
@@ -211,6 +211,8 @@ header.active .header-nav {
   top: 0;
   right: 0;
   z-index: 1;
+  width: 100%;
+  height: 100vh;
   backdrop-filter: brightness(30%) contrast(75%) grayscale(50%);
 }
 
@@ -342,13 +344,13 @@ header.active .menu-flyout-contact.phone {
 .request-button:focus,
 .request-button:active {
   background: linear-gradient(267.74deg, #315BEF 3.51%, #66DD8D 98.41%);
+  transition: all .3s;
 }
 
 .request-button:active {
   outline: 2px solid #66DD8D;
   color: #112B45;
-  transition: 1s;
- }
+}
 
 @media screen and (min-width: 900px) {
   .about h1 {
@@ -477,7 +479,7 @@ header.active .menu-flyout-contact.phone {
       min-height: 281px;
       top: -11px;
       background: linear-gradient(var(--angle-rotate), #315BEF 3.51%, #66DD8D 98.41%);
-      animation: spin 2.5s linear infinite;
+      animation: spin 2s linear infinite;
       filter: blur(32px);
     }
     
@@ -486,7 +488,7 @@ header.active .menu-flyout-contact.phone {
     .request-button:active {
           background: linear-gradient(var(--angle-rotate), #315BEF 3.51%, #66DD8D 98.41%);
           animation: spin 2.5s linear infinite;
-          transition: 1s;
+          transition: all .3s;
       }
 
     /* animation ends */ 
@@ -686,32 +688,6 @@ strong {
 
 /* end of Services section */
 
-.clouds-wrapper {
-  overflow-x: hidden;
-  width: min(100vw, 1200px);
-  position: absolute;
-  outline: 3px #f5f5dc dotted;
-  height: 1764px;
-  margin: 0 auto;
-
-}
-
-.clouds {
-  background: url('../img/bkgr_contacts_white-clouds.png') no-repeat;
-  display: block;
-  position: absolute;
-  background-size: cover;
-  width: 2985px;
-  height: 1764px;
-  width: 1021px;
-  height: 539px;
-  left: -300px;
-  top: 300px;
-  overflow-x: hidden;
-  opacity: 0.7;
-  transform: rotate(21.85deg);
-}
-
 
 /* Founder section start */
 
@@ -736,7 +712,6 @@ strong {
   top: 116px;
   right: 0px;
   z-index: -3; 
-  outline: 4px dotted tomato;
   border-top-left-radius: 50%;
   border-bottom-left-radius: 50%;
 }
@@ -749,25 +724,32 @@ strong {
   position: relative;
 }
 
- /* .founder::before { 
-  content: "";
-  width: max(68px, calc(68px + 68 * (100vw - 1200px) / 300));
-  max-width: 136px;
-  height: 136px;
-  background: #66DD8D;
-  opacity: 0.4;
-  filter: blur(50px);
-  position: absolute;
-  top: 80px;
-  right: -80px;
-  left: 220px;
-  z-index: -3; 
-  }  */
-
-
 .founder p {
   margin-bottom: 24px;
   width: 90%;
+}
+
+.clouds-wrapper {
+  overflow-x: hidden;
+  width: min(100vw, 1200px);
+  position: absolute;
+  height: 950px;
+  margin: 0 auto;
+  left: 0;
+}
+
+.clouds {
+  background: url('../img/bkgr_contacts_white-clouds.png') no-repeat center;
+  display: block;
+  position: absolute;
+  background-size: cover;
+  width: 1021px;
+  height: 539px;
+  left: -300px;
+  top: 300px;
+  overflow-x: hidden;
+  opacity: 0.7;
+  transform: rotate(21.85deg);
 }
 
 .img-wrapper {
@@ -796,7 +778,7 @@ strong {
     width: max(180px, calc(70px + 250 * (100vw - 1200px) / 400));
     max-width: 320px;
     height: 320px;
-    filter: blur(110px);
+    filter: blur(130px);
     position: absolute;
     top: 260px;
     right: clamp(-250px, calc(0px - 250 * (100vw - 1200px) / 500), 0px);
@@ -824,6 +806,19 @@ strong {
     margin-top: 431px;
   }
 
+  .clouds-wrapper {
+    height: 1400px;
+  }
+
+    .clouds {
+    width: 1351px;
+    height: 713px;
+    left: -444px;
+    top: 545px;
+    transform: none;
+    opacity: 1;
+  }
+
   .img-wrapper {
     min-width: 44%;
     margin-top: 200px;
@@ -835,16 +830,6 @@ strong {
     height: auto;
 
   }
-  
-  /* .founder h2::after {
-    width: 320px;
-    height: 320px;
-    filter: blur(150px);
-    top: -70px;
-    right: -350px;
-    left: 650px;    
-    }  */
- 
 
 }
 
@@ -858,27 +843,7 @@ strong {
 
 .contact-info-wrapper {
   position: relative;
-  outline: 2px solid orange;
 }
-
-
-/*.contacts::before {
-  content: "";
-  background: url('../img/bkgr_contacts_white-clouds.png') no-repeat;
-  position: absolute;
-  background-size: cover;
-  min-width: 100px;
-  max-width: 100vw;
-  min-height: 139px;
-  max-height: 100vh;
-  outline: 5px solid rebeccapurple;
-  left: 0;
-  top: 200px;
-  left: -30px;
-  top: -145px;
-  opacity: 0.7;
-  transform: rotate(21.85deg);
-  overflow: hidden;}*/
 
 .contacts h2 {
   margin-top: 101px;
@@ -904,14 +869,17 @@ strong {
   backdrop-filter: blur(8px);
   /* Note: backdrop-filter has minimal browser support */
   border-radius: 24px;
+  /* margin: 0 auto; */
   margin-bottom: 33px;
-  margin: 0 auto;
+
 }
 
 .contacts fieldset {
   padding: 16px;
   line-height: 0; /*this was needed to manually style the line-heights so they don't go out of place*/
   font-size: 1rem; /*the font for all form fields*/
+  border: none;
+  accent-color: #66DD8D;
  }
 
 .contacts form legend {
@@ -925,6 +893,7 @@ strong {
  .contacts option {
   width: 100%;
   background: transparent;
+  border: none;
   border-bottom: solid 1px #EBEBEB;
   line-height: 22px; /*px value is to match translateY below*/
   padding-top: 16px;
@@ -939,7 +908,7 @@ strong {
 }
 
 .floating-labels input::placeholder {
-  opacity: 0; /*можно его и показать, но думаю, что будет визуально перегружено*/
+  opacity: 0; /*hiding it to avoid visual overload*/
 }
 
 .floating-labels input:focus + label,
@@ -963,16 +932,38 @@ select {
   font-family: 'Manrope', Arial, sans-serif;
 }
 
+input[type="text"]:focus,
+input[type="email"]:focus,
+input[type="tel"]:focus,
+input[type="datetime-local"]:focus,
+select:focus {
+  border: 2px solid white;
+  outline: #66DD8D 2px solid;
+  transition: all .3s;
+}
+
+input[type="text"]:focus-visible,
+input[type="email"]:focus-visible,
+input[type="tel"]:focus-visible,
+input[type="datetime-local"]:focus-visible,
+select:focus-visible {
+  border: 2px solid white;
+  outline: #66DD8D 1px solid;
+  transition: all .3s;
+}
+
 label[for="datetime-field"] {
   position: relative;
+  width: calc(100% - 20px);
 }
 
 label[for="datetime-field"]::after {
   content: url('../img/Icon_Calendar.svg');
   display: inline-block;
   position: absolute;
-  padding-left: 40px;
+  pointer-events: none;
   top: -11px;
+  left: 100%;
 } 
 
 .floating-labels input:focus + label[for="datetime-field"]::after,
@@ -984,7 +975,17 @@ input[name="datetime-field"]::-webkit-calendar-picker-indicator {
   filter: invert(1); /*не считаю необходимым подменять работающую в бразузере систему, лучше буду использовать его иконку, перекрасив её*/
   }
 
-/* "Select" was styled based on https://www.w3docs.com/snippets/css/how-to-create-a-placeholder-for-an-html5-select-box-by-using-only-html-and-css.html */
+/* "Select" was styled based on https://www.w3docs.com/snippets/css/how-to-create-a-placeholder-for-an-html5-select-box-by-using-only-html-and-css.html 
+    and https://web.dev/learn/forms/styling-form-controls/*/
+
+.contacts select {
+  appearance: none;
+  background-color: inherit;
+  background-image: url(../img/Icon_Caret_Down_SM.svg);
+  background-repeat: no-repeat;
+  background-position: right -12px top 50%, 0 0;
+  background-size: 48px auto;
+}
 
 .contacts select:required:invalid {
   font-size: 16px;
@@ -994,6 +995,23 @@ input[name="datetime-field"]::-webkit-calendar-picker-indicator {
 
 .contacts option {
   background: #2a3f53;
+  border-top: 1px solid white;
+  border-bottom: 1px solid white;
+}
+
+.contacts option:hover, .contacts option:focus  {
+  background-color: #ffffff;
+}
+
+.contacts option:active, 
+.contacts option:visited, 
+.contacts option:target,
+.contacts option:focus-within,
+.contacts option:focus-visible,
+.contacts option:checked,
+.contacts option::selection
+  {
+  background-color: #315BEF;
 }
 
 .contacts option[value=""][disabled] {
@@ -1002,24 +1020,7 @@ input[name="datetime-field"]::-webkit-calendar-picker-indicator {
 
 label[for="origin-field"] {
   font-size: 0;
-  position: relative;
 } 
-
-/*label[for="origin-field"]::after {
-  content: url(../img/Icon_Caret_Down_SM.svg);
-  display: inline-block;
-  position: absolute;
-  top: -75px;
-  left: 90%;
-  pointer-events: none;
-  padding: 5px 1px;
-  background-color: #2a3f53;
-Этот элемент рисует зелёную стрелочку поверх элемента по умолчанию: белой стрелочки сбоку. 
-Более радикальный вариант - задать appearance:none, 
-но тогда надо вручную стилизовать все состояния при наведении и т.п.; 
-я хотела обойтись без дополнительного кода.
-Тут и так сложный код с учётом floating labels и искусственного плейсхолдера.  
-}*/
 
 .contacts label[for="pers-data-field"] {
   font-size: 14px;
@@ -1053,47 +1054,26 @@ label[for="origin-field"] {
 
 .contacts form .request-button {
   margin-top: 16px;
+  padding-right: calc(50vw - 10ch);
+  padding-left: calc(50vw - 10ch);
+  border: none;
 }
 
 @media screen and (min-width: 900px) {
 
-  .clouds {
-    width: 1351px;
-    height: 713px;
-    left: -550px;
-    top: 500px;
-    transform: none;
-  }
-
   .contacts .wrapper {
     display: grid;
-    grid-template-columns: 1fr 1fr;
-    /*grid-template-columns:  repeat(2, minmax(0, 1fr));*/
+    grid-template-columns: 0.8fr 1fr;
     gap: min(30px, calc(9px + 21 * (100vw - 890px) / 310 )); /*min(9px + (30-9) * (100vw - 890px) / 1200 - 890)*/
     padding: 0 30px;
    }
-  
-   .contact-info-wrapper {
-    outline: 2px solid orange;
-  }
-  
-/*  .contacts::before {
-    width: 1351px;
-    height: 713px;
-
-    left: -0px;
-    top: 0px;
-    opacity: 1;
-    transform: none;
-  }*/
-
+ 
   .contact-info-wrapper, .contacts-form {
     margin-top: 200px;
-    outline: 6px dashed lightcoral;
   }
 
   .contacts h2 {
-    margin-top: 412px;
+    margin-top: 362px;
     margin-bottom: 64px;
     font-size: min(128px, calc(81px + 47 * (42vw - 360px) / 195));
     /*
@@ -1115,8 +1095,6 @@ label[for="origin-field"] {
   }
 
   .contacts form {
-    /*min-width: 440px;*/
-    /*min-height: 743px;*/
     background: rgba(104, 104, 104, 0.26);
     border-radius: 32px;
     margin-bottom: 98px;
@@ -1192,6 +1170,11 @@ label[for="origin-field"] {
   } 
   .contacts form .request-button {
     margin-top: 27px;
+    padding-right: inherit;
+    padding-left: inherit;
+    display: block;
+    margin-right: auto;
+    margin-left: 0;
   }
 }
 
@@ -1248,12 +1231,11 @@ label[for="origin-field"] {
 
 footer {
   background: url("../img/symbol_white2_footer_mobile.png")  #081D31 no-repeat center;
-  background-size: 320px 561px; 
+  background-size: contain; 
   margin: 0 auto;
 }
 
 .footer-wrapper {
-  min-height: 561px;
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
@@ -1266,6 +1248,7 @@ footer {
   justify-content: space-between;
   width: 100%;
   margin-top: 16px;
+  margin-bottom: 52px;
 }
 
 .footer-top a {
@@ -1300,6 +1283,7 @@ color: #66DD8D;
   height: 24px;
   border-radius: 50%;
   margin-right: 8px;
+  margin-bottom: 8px;
   background: #315BEF no-repeat center;
 }
 
@@ -1333,13 +1317,19 @@ color: #66DD8D;
 }
 
 .button-social:hover, 
-.button-social:active, 
-.button-social:focus {
-  box-shadow: 0 0 2px 4px #315BEF;
+.button-social:focus,
+.button-social:active  {
+  transition: all .3s;
+  transform: scale(1.2);
+}
+
+.button-social:active {
+  border: 2px solid #ffffff;
 }
 
 .footer-legal {
   width: 100%;
+  margin-bottom: 51px;
 }
 
 .legal-link {
@@ -1356,6 +1346,14 @@ color: #66DD8D;
   color: #F4F4F4;
 }
 
+footer .logo-link {
+  margin-bottom: 2rem;
+ }
+
+.footer-slogan {
+  margin-bottom: 16px;
+}
+
 .footer-slogan-text {
   font-size: 24px;
   line-height: 1.5;
@@ -1366,11 +1364,10 @@ color: #66DD8D;
 @media screen and (min-width: 900px) {
   footer {
     background: url('../img/symbol_white1_footer_desktop.png') #081D31 no-repeat center;
-    background-size: 562px 450px; 
+    background-size: contain; 
   }
   
   .footer-wrapper {
-    min-height: 450px;
     align-content: space-between;
     align-items: center;
     padding: 0 30px;
@@ -1378,6 +1375,7 @@ color: #66DD8D;
 
   .footer-top {
       margin-top: 32px;
+      margin-bottom: 169px;
     }
 
   .footer-menu-list .menu-item {
@@ -1410,6 +1408,7 @@ color: #66DD8D;
      .footer-legal {
       order: 4;
       width: auto;
+      margin-bottom: 48px;
      }
   }
 
